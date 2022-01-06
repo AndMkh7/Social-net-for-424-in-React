@@ -1,0 +1,27 @@
+
+.item{
+    color: red;
+}
+
+.delete{
+    font-family: Times New Roman, serif;
+    background-color:orangered;
+    font-style: italic;
+}
+
+.add{
+    font-style: italic;
+    font-family: Times New Roman, serif;
+    background-color: chartreuse;
+}
+
+.textarea{
+    color : darkgray;
+}
+
+.mypost{
+    font-style: italic;
+    font-family: Times New Roman, serif ;
+    font-weight: bold;
+    font-size: 28px;
+}
