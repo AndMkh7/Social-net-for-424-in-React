@@ -6,19 +6,19 @@ const LeftSidebar = () =>{
 
                 <div className = {style.leftside}>
                     <div className ={style.item}>
-                        <a href={style.profile}>Profile</a>
+                        <a href="/profile">Profile</a>
                     </div>
 
                     <div className ={` ${style.item} ${style.active}`}>
-                        <a href={style.massage}>Massages</a>
+                        <a href="/dialogs">Massages</a>
                     </div>
 
                     <div className = {style.item}>
-                        <a href={style.news}>News</a>
+                        <a href="/news">News</a>
                     </div>
 
                     <div className = {style.item}>
-                        <a href={style.news}>Photos</a>
+                        <a href="/photos">Photos</a>
                     </div>
 
                     <div className = {style.item}>
@@ -26,10 +26,7 @@ const LeftSidebar = () =>{
                     </div>
 
                     <div className = {style.item}>
-
-
-
-                        <a href={style.news}>Settings</a>
+                        <a href="/settings">Settings</a>
                     </div>
 
 
