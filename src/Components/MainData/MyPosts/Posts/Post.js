@@ -8,7 +8,7 @@ const Post = (props) =>{
             <img src = "https://img.a.transfermarkt.technology/portrait/big/3372-1588239928.jpg?lm=1" alt = ""/>
             {props.massage}
             <div>
-                <span>Like</span>
+                <span>Like {props.likescount}</span>
             </div>
         </div>
 

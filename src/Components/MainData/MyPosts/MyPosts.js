@@ -19,9 +19,13 @@ const MyPosts = () =>{
 
             <div className = {style.posts}>
 
-                <Post massage = "Our first match of this season is  in Monday 21th February " />
-                <Post massage = "Our second match of this season is  in Sunday 27th February" />
+                <Post massage = "Our first match of thi՝s season is  in Monday 21th February " likescount = "30"/>
+                <Post massage = "Our second match of this season is  in Sunday 27th February" likescount = "15"/>
+
+
             </div>
+
+
 
 
 
