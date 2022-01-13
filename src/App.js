@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 import Header from "./Components/Header/Header.js";
 import MainData from './Components/MainData/MainData';
-import LeftSidebar from './Components/LeftSidebar/LeftSidebar';
+import Navigation from './Components/Navigation/Navigation';
 import Dialogs from "./Components/Dialogs/Dialogs";
 import {BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -15,7 +15,7 @@ const App = () => {
         <BrowserRouter>
                 <div className="app">
                     <Header/>
-                    <LeftSidebar/>
+                    <Navigation/>
                         <div className='app.content'>
 
                             <Routes>
