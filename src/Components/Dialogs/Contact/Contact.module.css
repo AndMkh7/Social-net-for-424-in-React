@@ -1,0 +1,9 @@
+.contact{
+    text-decoration: none;
+}
+
+.active{
+    text-decoration: none;
+    font-weight: bold;
+    color : Salmon;
+}

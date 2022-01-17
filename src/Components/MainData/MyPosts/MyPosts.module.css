@@ -1,31 +1,42 @@
 
-.item{
+.item {
     color: red;
+
 }
 
-.delete{
+.delete {
     font-family: Times New Roman, serif;
-    background-color:orangered;
+    background-color: orangered;
     font-style: italic;
 }
 
-.add{
+.add {
     font-style: italic;
     font-family: Times New Roman, serif;
     background-color: chartreuse;
+    margin-right: 20px;
+    margin-left: 10px;
 }
 
-.textarea{
-    color : darkgray;
+.textarea {
+    color: darkgray;
 }
 
-.mypost{
+.mypost {
     font-style: italic;
-    font-family: Times New Roman, serif ;
+    font-family: Times New Roman, serif;
     font-weight: bold;
     font-size: 28px;
+    padding: 10px;
 }
 
-.likescount{
-    color:yellowgreen;
+.likescount {
+    color: yellowgreen;
+}
+.buttons{
+    padding: 10px;
+}
+
+.posts{
+    margin-top: 15px;
 }

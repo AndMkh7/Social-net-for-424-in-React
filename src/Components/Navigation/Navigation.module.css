@@ -6,7 +6,7 @@
     max-height: 437px;
 }
 
-.item  {
+.item {
     color: white;
     text-decoration: none;
 }
@@ -14,4 +14,6 @@
 .active {
     color: OrangeRed;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 19px;
 }

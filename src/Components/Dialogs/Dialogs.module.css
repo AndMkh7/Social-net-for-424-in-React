@@ -1,0 +1,36 @@
+.dialogs{
+    display:grid ;
+    grid-template-columns: 2fr 10fr;
+    text-decoration: none;
+
+}
+.contacts{
+    color : SteelBlue;
+    padding:10px;
+    text-decoration: none;
+
+}
+
+.contact{
+    text-decoration: none;
+    }
+
+.contact.active{
+    color:orangered;
+    font-weight: bold;
+    font-size: 20px;
+    /*
+    text-decoration: none;
+    */
+
+}
+
+.messages{
+    padding:10px;
+    color:Salmon;
+    text-decoration: none;
+}
+
+.message{
+    text-decoration: none;
+}
