@@ -4,6 +4,14 @@ import style from "./MyPosts.module.css";
 import Post from "./Posts/Post.jsx";
 
 const MyPosts = () => {
+
+    let posts = [
+        {id: 0, postText: "Our first match of thi՝s season is  in Monday 21th February ", likesCount: 30},
+        {id: 1, postText: "Our second match of this season is  in Sunday 27th February", likesCount: 12},
+    ];
+
+    let post = posts.map(p => <Post postText={p.postText} likesCount={p.likesCount}/>);
+
     return (
         <div>
             <div className={style.mypost}>
@@ -24,8 +32,7 @@ const MyPosts = () => {
 
             <div className={style.posts}>
 
-                <Post massage="Our first match of thi՝s season is  in Monday 21th February " likescount="30"/>
-                <Post massage="Our second match of this season is  in Sunday 27th February" likescount="15"/>
+                {post}
 
 
             </div>
