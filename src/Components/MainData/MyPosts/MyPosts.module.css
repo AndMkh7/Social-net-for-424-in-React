@@ -4,13 +4,15 @@
 
 }
 
-.delete {
+.delete1 {
     font-family: Times New Roman, serif;
     background-color: orangered;
     font-style: italic;
 }
 
-.add {
+
+
+.add1 {
     font-style: italic;
     font-family: Times New Roman, serif;
     background-color: chartreuse;
@@ -18,8 +20,55 @@
     margin-left: 10px;
 }
 
+.delete {
+    background: #d6eaf8;
+    font-style: italic;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #e85542 0%, #e75641 51%,#000000 100% );
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+
+
+    background-position: right center;
+}
+.add {
+    background: #d6eaf8;
+    font-style: italic;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    padding: 10px 10px;
+    margin: 10px 10px;
+    border-radius: 15px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
+    transition: .5s;
+
+
+    background-position: right center;
+}
+
 .textarea {
-    color: darkgray;
+    font-family: serif;
+    font-style: italic;
+    font-weight: bold;
+    background-color: rgb(238, 156, 173);
+    width: 685px;
+    height: 50px;
+    color: rgb(65, 55, 55);
 }
 
 .mypost {
@@ -39,4 +88,10 @@
 
 .posts{
     margin-top: 15px;
+
 }
+
+
+
+
+

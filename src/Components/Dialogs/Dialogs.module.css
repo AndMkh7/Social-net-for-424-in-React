@@ -1,8 +1,10 @@
 .dialogs{
+    min-height: 465px;
     display:grid ;
     grid-template-columns: 2fr 10fr;
     text-decoration: none;
-
+   /* background-image: url("./namak.png");
+    background-size : 100%;*/
 }
 .contacts{
     color : SteelBlue;
@@ -29,6 +31,9 @@
     padding:10px;
     color:Salmon;
     text-decoration: none;
+
+
+
 }
 
 .message{

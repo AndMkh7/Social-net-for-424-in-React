@@ -3,6 +3,7 @@ import "./ProfileMainData.module.css"
 import style from "./ProfileMainData.module.css";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import {addPost} from "../../redux/state";
 
 const ProfileMainData = (props) => {
     debugger ;
@@ -10,7 +11,7 @@ const ProfileMainData = (props) => {
         <div>
 
             <ProfileInfo/>
-            <MyPosts posts = {props.posts}/>
+            <MyPosts posts = {props.profileState.posts} addPost = {addPost}/>
 
         </div>
     );

@@ -8,8 +8,8 @@ const Dialogs = (props) => {
 
 
 
-    let contact = props.contacts.map(contact => <Contact name={contact.name} id={contact.id}/>);
-    let message = props.messages.map(message => <Message text={message.text}/>);
+    let contact = props.dialogsState.contacts.map(contact => <Contact name={contact.name} id={contact.id}/>);
+    let message = props.dialogsState.messages.map(message => <Message text={message.text}/>);
 
     return (
 
@@ -21,6 +21,7 @@ const Dialogs = (props) => {
             </div>
 
             <div className={style.messages}>
+
                 {message}
 
             </div>
