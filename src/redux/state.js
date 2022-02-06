@@ -6,6 +6,7 @@ let state = {
             {id: 0, postText: "Our first match of thi՝s season is  in Monday 21th February ", likesCount: 30},
             {id: 1, postText: "Our second match of this season is  in Sunday 27th February", likesCount: 12},
         ],
+        newPostText : "Type here please" ,
     },
     contactsPage: {
         contacts: [
@@ -24,17 +25,25 @@ let state = {
     }
 }
 
-export let addPost =(postText)=>{
-    debugger;
+export let addPost =()=>{
 
     let newPost = {
         id :state.profilePage.posts.length,
-        postText : postText ,
+        postText : state.profilePage.newPostText ,
         likesCount : 0,
     };
     state.profilePage.posts.push(newPost);
     reRender(state);
 }
+
+export let updateNewPostText =(newText)=>{
+
+
+    state.profilePage.newPostText = newText;
+    reRender(state);
+}
+
+
 
 
 

@@ -8,7 +8,7 @@ const Post = (props) => {
         <div className={style.item}>
             <img src="https://img.a.transfermarkt.technology/portrait/big/3372-1588239928.jpg?lm=1" alt=""/>
             {props.postText}
-            <div>
+            <div >
                 <span>Likes {props.likesCount}</span>
 
             </div>

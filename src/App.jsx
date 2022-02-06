@@ -18,11 +18,27 @@ const App = (props) => {
                 <div className='app.content'>
 
                     <Routes>
-                        <Route path="/profile/*" element={<ProfileMainData profileState={props.state.profilePage}/>}/>
-                        <Route path="/dialogs/*" element={<Dialogs         dialogsState = {props.state.contactsPage}/>}/>
-                        <Route path="/news/*" element={<ProfileMainData profileState={props.state.profilePage}/>}/>
-                        <Route path="/photos/*" element={<ProfileMainData profileState={props.state.profilePage}/>}/>
-                        <Route path="/settings/*" element={<ProfileMainData profileState={props.state.profilePage}/>}/>
+                        <Route path="/profile/*" element={<ProfileMainData
+
+                            profilePage={props.state.profilePage}
+                            updateNewPostText = {props.updateNewPostText }
+                            addPost = {props.addPost}
+                        />
+                        }/>
+
+                           {/* */}
+
+                        <Route path="/dialogs/*" element={<Dialogs
+                            dialogsState = {props.state.contactsPage}/>}/>
+
+                        <Route path="/news/*" element={<ProfileMainData
+                            profileState={props.state.profilePage}/>}/>
+
+                        <Route path="/photos/*" element={<ProfileMainData
+                            profileState={props.state.profilePage}/>}/>
+
+                        <Route path="/settings/*" element={<ProfileMainData
+                            profileState={props.state.profilePage}/>}/>
                     </Routes>
 
                 </div>

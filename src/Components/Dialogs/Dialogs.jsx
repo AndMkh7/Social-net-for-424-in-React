@@ -7,7 +7,6 @@ import Message from "./Message/Message";
 const Dialogs = (props) => {
 
 
-
     let contact = props.dialogsState.contacts.map(contact => <Contact name={contact.name} id={contact.id}/>);
     let message = props.dialogsState.messages.map(message => <Message text={message.text}/>);
 
@@ -21,10 +20,13 @@ const Dialogs = (props) => {
             </div>
 
             <div className={style.messages}>
-
                 {message}
 
+                <textarea className = "textarea"> </textarea>
             </div>
+
+
+
         </div>
 
     );

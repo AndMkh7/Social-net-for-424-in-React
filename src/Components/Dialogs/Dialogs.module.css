@@ -1,19 +1,32 @@
 .dialogs{
     min-height: 465px;
     display:grid ;
+
+
     grid-template-columns: 2fr 10fr;
+
+    /*grid-template-rows: 60px 1fr;*/
+    grid-template-areas:
+    'contact message'
+    'contact textarea';
+
+
     text-decoration: none;
    /* background-image: url("./namak.png");
     background-size : 100%;*/
 }
 .contacts{
+    display: grid;
+    grid-area: contact ;
+
     color : SteelBlue;
-    padding:10px;
+    padding: 10px;
     text-decoration: none;
 
 }
 
 .contact{
+
     text-decoration: none;
     }
 
@@ -28,8 +41,11 @@
 }
 
 .messages{
-    padding:10px;
-    color:Salmon;
+    display: grid;
+    grid-area: message;
+
+    padding:15px;
+    color: salmon;
     text-decoration: none;
 
 
@@ -37,5 +53,17 @@
 }
 
 .message{
+
     text-decoration: none;
+}
+
+.textarea{
+    display: grid;
+    grid-area: textarea;
+    flex: 0 0 auto;
+    /* position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 150px;*/
 }
