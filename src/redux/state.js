@@ -6,7 +6,7 @@ let state = {
             {id: 0, postText: "Our first match of thi՝s season is  in Monday 21th February ", likesCount: 30},
             {id: 1, postText: "Our second match of this season is  in Sunday 27th February", likesCount: 12},
         ],
-        newPostText : "Type here please" ,
+        newPostText : "Type here please111111" ,
     },
     contactsPage: {
         contacts: [
@@ -22,8 +22,12 @@ let state = {
             {id: 2, text: "I am from Rio, guys !!!"},
 
         ],
+        newMessageText : "Hola" ,
+
     }
 }
+
+window.state=state;
 
 export let addPost =()=>{
 
@@ -44,6 +48,24 @@ export let updateNewPostText =(newText)=>{
 }
 
 
+
+export let addMessage =()=>{
+
+    let newMessage = {
+        id :state.contactsPage.messages.length,
+        text : state.contactsPage.newMessageText ,
+
+    };
+    state.contactsPage.messages.push(newMessage);
+    reRender(state);
+}
+
+export let updateNewMessageText =(newText)=>{
+
+
+    state.contactsPage.newMessageText = newText ;
+    reRender(state);
+}
 
 
 

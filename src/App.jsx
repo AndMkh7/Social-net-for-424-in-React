@@ -5,13 +5,13 @@ import Header from "./Components/Header/Header.jsx";
 import ProfileMainData from './Components/MainData/ProfileMainData';
 import Navigation from './Components/Navigation/Navigation';
 import Dialogs from "./Components/Dialogs/Dialogs";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 
 
 const App = (props) => {
 
     return (
-        <BrowserRouter>
+
             <div className="app">
                 <Header/>
                 <Navigation/>
@@ -26,10 +26,14 @@ const App = (props) => {
                         />
                         }/>
 
-                           {/* */}
+
 
                         <Route path="/dialogs/*" element={<Dialogs
-                            dialogsState = {props.state.contactsPage}/>}/>
+                            dialogsState = {props.state.contactsPage}
+                            contactsPage = {props.state.contactsPage}
+                            updateNewMessageText = {props.updateNewMessageText}
+                            addMessage = {props.addMessage}
+                        />}/>
 
                         <Route path="/news/*" element={<ProfileMainData
                             profileState={props.state.profilePage}/>}/>
@@ -43,7 +47,7 @@ const App = (props) => {
 
                 </div>
             </div>
-        </BrowserRouter>
+
     )
 }
 

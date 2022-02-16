@@ -45,6 +45,7 @@ const MyPosts = (props) => {
 
                 </div>
 
+
                 
                 <button className={style.add }  onClick = { addNewPost} > Add post</button>
                 <button className={style.delete}> Delete</button>
