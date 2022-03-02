@@ -1,72 +1,89 @@
-import reRender from "../reRender";
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 
-let state = {
-    profilePage: {
-        posts: [
-            {id: 0, postText: "Our first match of thi՝s season is  in Monday 21th February ", likesCount: 30},
-            {id: 1, postText: "Our second match of this season is  in Sunday 27th February", likesCount: 12},
-        ],
-        newPostText : "Type here please111111" ,
+const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
+const SEND_MESSAGE = "SEND-MESSAGE";
+
+let store = {
+
+    _state: {
+        profilePage: {
+            posts: [
+                {id: 0, postText: "Our first match of thi՝s season is  in Monday 21th February ", likesCount: 30},
+                {id: 1, postText: "Our second match of this season is  in Sunday 27th February", likesCount: 12},
+            ],
+            newPostText: "Type here please",
+        },
+        contactsPage: {
+            contacts: [
+                {id: 0, name: "Rivaldo"},
+                {id: 1, name: "Ronaldo"},
+                {id: 2, name: "Ronaldinho"},
+                {id: 3, name: "R.Carlos"},
+                {id: 4, name: "Cafu"},
+            ],
+            messages: [
+                {id: 0, text: "Hi guys, I am from Brazil."},
+                {id: 1, text: "Hello , I am too."},
+                {id: 2, text: "I am from Rio, guys !!!"},
+
+            ],
+            newMessageBody: "",
+
+        },
+        sidebar: {}
     },
-    contactsPage: {
-        contacts: [
-            {id: 0, name: "Rivaldo"},
-            {id: 1, name: "Ronaldo"},
-            {id: 2, name: "Ronaldinho"},
-            {id: 3, name: "R.Carlos"},
-            {id: 4, name: "Cafu"},
-        ],
-        messages: [
-            {id: 0, text: "Hi guys, I am from Brazil."},
-            {id: 1, text: "Hello , I am too."},
-            {id: 2, text: "I am from Rio, guys !!!"},
+    _callSubscriber() {
+        console.log("Hello , rendering")
+    },
 
-        ],
-        newMessageText : "Hola" ,
+    getState() {
+        return this._state;
+    },
+    subscribe(observer) {
+        this._callSubscriber = observer;
+    },
 
-    }
+
+    dispatch(action) {
+        if (action.type === ADD_POST) {
+
+            let newPost = {
+                id: this._state.profilePage.posts.length,
+                postText: this._state.profilePage.newPostText,
+                likesCount: 0,
+            };
+            this._state.profilePage.posts.push(newPost);
+            this._state.profilePage.newPostText = "";
+            this._callSubscriber(this._state);
+
+        } else if (action.type === UPDATE_NEW_POST_TEXT) {
+
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber(this._state);
+
+        } else if (action.type === UPDATE_NEW_MESSAGE_BODY) {
+            this._state.contactsPage.newMessageBody = action.body;
+            this._callSubscriber(this._state);
+        }else if (action.type === SEND_MESSAGE) {
+            let body = this._state.contactsPage.newMessageBody ;
+            this._state.contactsPage.newMessageBody = "";
+            this._state.contactsPage.messages.push({id:6 /*this._state.contactsPage.messages.length*/, text: body})
+            this._callSubscriber(this._state);
+        }
+
+
+    },
+
 }
+export const addPostActionCreator = () => ({type: ADD_POST});
 
-window.state=state;
+export const updateNewPostTextActionCreator = (text) => ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export let addPost =()=>{
+export const sendMessageCreator = () => ({type: SEND_MESSAGE});
 
-    let newPost = {
-        id :state.profilePage.posts.length,
-        postText : state.profilePage.newPostText ,
-        likesCount : 0,
-    };
-    state.profilePage.posts.push(newPost);
-    reRender(state);
-}
+export const updateNewMessageBodyCreator = (text) => ({type: UPDATE_NEW_MESSAGE_BODY, body: text});
 
-export let updateNewPostText =(newText)=>{
+window.store = store;
 
-
-    state.profilePage.newPostText = newText;
-    reRender(state);
-}
-
-
-
-export let addMessage =()=>{
-
-    let newMessage = {
-        id :state.contactsPage.messages.length,
-        text : state.contactsPage.newMessageText ,
-
-    };
-    state.contactsPage.messages.push(newMessage);
-    reRender(state);
-}
-
-export let updateNewMessageText =(newText)=>{
-
-
-    state.contactsPage.newMessageText = newText ;
-    reRender(state);
-}
-
-
-
-export default state;
+export default store;
