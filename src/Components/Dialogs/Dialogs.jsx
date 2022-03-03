@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Dialogs.module.css"
 import Contact from "./Contact/Contact";
 import Message from "./Message/Message";
-import {sendMessageCreator ,updateNewMessageBodyCreator } from "../../redux/state.js";
+import {sendMessageCreator ,updateNewMessageBodyCreator } from "../../redux/contacts-reducer";
 
 
 
