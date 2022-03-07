@@ -30,7 +30,7 @@ let store = {
             newMessageBody: "",
 
         },
-        sidebar: {}
+        sidebar: {},
     },
     _callSubscriber() {
         console.log("Hello , rendering")
