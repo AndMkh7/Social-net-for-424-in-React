@@ -8,7 +8,7 @@ import {sendMessageCreator ,updateNewMessageBodyCreator } from "../../redux/cont
 
 const Dialogs = (props) => {
 
-    let state = props.store.getState().contactsPage;
+    let state = props.contactsPage;
     let newMessageElement = React.createRef();
 
     let contact = state.contacts.map(contact => <Contact
@@ -23,23 +23,18 @@ const Dialogs = (props) => {
 
 
 
-    let sendMessage = () =>{
+    let onSendMessage = () =>{
 
-        props.dispatch(sendMessageCreator({type : "SEND-MESSAGE"}));
-
+        props.sendMessage();
     };
+
 
     let onMessageChange =(e)=>{
         let body = e.target.value;
-        props.dispatch(updateNewMessageBodyCreator(body));
+        props.updateNewMessageBody(body);
 
 
     }
-
-
-
-
-
 
     return (
 
@@ -57,7 +52,7 @@ const Dialogs = (props) => {
                     <textarea  ref ={newMessageElement}
                                onChange = {onMessageChange} value = {newMessageBody}/>
 
-                    <button className={style.send} onClick = {sendMessage} > Send </button>
+                    <button className={style.send} onClick = {onSendMessage} > Send </button>
 
                 </div>
             </div>

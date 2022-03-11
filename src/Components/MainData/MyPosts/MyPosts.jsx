@@ -8,7 +8,7 @@ import {addPostActionCreator ,updateNewPostTextActionCreator } from "../../../re
 
 const MyPosts = (props) => {
 
-
+ let posts = props.posts.map(p => <Post postText={p.postText} likesCount={p.likesCount}/>);
 
 
  let newPostElement = React.createRef();
@@ -16,18 +16,19 @@ const MyPosts = (props) => {
 
 
  let addNewPost = () =>{
-     props.dispatch(addPostActionCreator());
+     props.addPost();
+
 
  };
 
     let onPostChange =()=>{
         let text = newPostElement.current.value;
-        props.dispatch( updateNewPostTextActionCreator(text) );
+        props.updateNewPostText(text);
 
     }
 
 
-    let post = props.posts.map(p => <Post postText={p.postText} likesCount={p.likesCount}/>);
+
 
 
 
@@ -56,7 +57,7 @@ const MyPosts = (props) => {
 
             <div className={style.posts}>
 
-                {post}
+                {posts}
 
 
             </div>

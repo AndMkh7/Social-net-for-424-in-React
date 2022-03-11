@@ -4,8 +4,8 @@ import './App.css';
 import Header from "./Components/Header/Header.jsx";
 import ProfileMainData from './Components/MainData/ProfileMainData';
 import Navigation from './Components/Navigation/Navigation';
-import Dialogs from "./Components/Dialogs/Dialogs";
 import { Routes, Route} from "react-router-dom";
+import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 
 
 const App = (props) => {
@@ -19,16 +19,14 @@ const App = (props) => {
 
                     <Routes>
                         <Route path="/profile/*" element={<ProfileMainData
-
-                            profilePage={props.state.profilePage}
-                            dispatch = {props.dispatch }
+                                store={props.store}
+                            /*profilePage={props.state.profilePage}
+                            dispatch = {props.dispatch }*/
 
                         />
                         }/>
 
-
-
-                        <Route path="/dialogs/*" element={<Dialogs
+                        <Route path="/dialogs/*" element={<DialogsContainer
                             store = {props.store}
 
                             contactsPage = {props.state.contactsPage}
