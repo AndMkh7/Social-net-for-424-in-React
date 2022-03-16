@@ -29,18 +29,15 @@ const App = (props) => {
                         <Route path="/dialogs/*" element={<DialogsContainer
                             store = {props.store}
 
-                            contactsPage = {props.state.contactsPage}
-                            dispatch = {props.dispatch }
+                            /*contactsPage = {props.state.contactsPage}
+                            dispatch = {props.dispatch }*/
                         />}/>
 
-                        <Route path="/news/*" element={<ProfileMainData
-                            profileState={props.state.profilePage}/>}/>
+                        <Route path="/news/*" element={""}/>
 
-                        <Route path="/photos/*" element={<ProfileMainData
-                            profileState={props.state.profilePage}/>}/>
+                        <Route path="/photos/*" element={""}/>
 
-                        <Route path="/settings/*" element={<ProfileMainData
-                            profileState={props.state.profilePage}/>}/>
+                        <Route path="/settings/*" element={""}/>
                     </Routes>
 
                 </div>

@@ -2,8 +2,6 @@ import React from "react";
 import style from "./Dialogs.module.css"
 import Contact from "./Contact/Contact";
 import Message from "./Message/Message";
-import {sendMessageCreator ,updateNewMessageBodyCreator } from "../../redux/contacts-reducer";
-
 
 
 const Dialogs = (props) => {
@@ -21,8 +19,6 @@ const Dialogs = (props) => {
     let newMessageBody = state.newMessageBody;
 
 
-
-
     let onSendMessage = () =>{
 
         props.sendMessage();
@@ -32,8 +28,6 @@ const Dialogs = (props) => {
     let onMessageChange =(e)=>{
         let body = e.target.value;
         props.updateNewMessageBody(body);
-
-
     }
 
     return (
@@ -56,8 +50,6 @@ const Dialogs = (props) => {
 
                 </div>
             </div>
-
-
 
         </div>
 

@@ -8,6 +8,7 @@ let initialState = {
     ],
     newPostText: "Type here please",
 };
+
 const profileReducer = (state=initialState, action)=> {//параметрыпо умолчанию
     switch (action.type) {
         case ADD_POST:

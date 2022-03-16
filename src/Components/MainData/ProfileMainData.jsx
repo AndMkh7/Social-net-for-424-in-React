@@ -5,6 +5,7 @@ import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 
 const ProfileMainData = (props) => {
+    debugger;
 
     return (
         <div>

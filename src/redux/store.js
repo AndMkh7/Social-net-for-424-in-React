@@ -2,6 +2,8 @@ import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
 import contactsReducer from "./contacts-reducer";
 
+/*этот store не будет использоваться, но пока что не удаляем,
+* наши данные store-а находятся в файле redux-store.js*/
 
 let store = {
 
@@ -42,7 +44,6 @@ let store = {
     subscribe(observer) {
         this._callSubscriber = observer;
     },
-
 
     dispatch(action) {
 

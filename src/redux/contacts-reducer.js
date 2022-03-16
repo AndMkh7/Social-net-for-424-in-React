@@ -1,5 +1,6 @@
 const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
 const SEND_MESSAGE = "SEND-MESSAGE";
+
 let initialState = {
     contacts: [
         {id: 0, name: "Rivaldo"},
