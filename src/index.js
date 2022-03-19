@@ -7,7 +7,7 @@ import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
 
-let reRender= () =>{
+
 
     ReactDOM.render(
         <React.StrictMode>
@@ -26,12 +26,6 @@ let reRender= () =>{
         document.getElementById('root')
     );
 
-}
 
 
-reRender(store.getState());
 
-store.subscribe(()=>{
-    let state = store.getState();
-    reRender(state);
-});
