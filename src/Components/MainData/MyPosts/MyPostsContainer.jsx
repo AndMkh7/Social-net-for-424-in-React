@@ -1,7 +1,7 @@
 import React from "react";
 import {addPostActionCreator ,updateNewPostTextActionCreator } from "../../../redux/profile-reducer"
 import MyPosts from "./MyPosts";
-import connect from "react-redux/lib/connect/connect";
+import {connect} from "react-redux";
 
 /*Инсталлируем библиотеку react-redux в наш проект.
   С помощю супер-функции connect(1)(2) , который существует в библиотеке react-redux ,
@@ -25,8 +25,8 @@ let mapDispatchToProps = (dispatch)=>{
             let action = updateNewPostTextActionCreator(text);
             dispatch(action);
         },
-        addPost :(dispatch)=>{
-          dispatch(addPostActionCreator())
+        addPost :()=>{
+          dispatch(addPostActionCreator());
         }
     }
 };
