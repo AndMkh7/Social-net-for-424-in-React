@@ -6,20 +6,23 @@ import Message from "./Message/Message";
 
 const Dialogs = (props) => {
 
-    let state = props.contactsPage;
+
+    const state = props?.contactsPage;
+
+
     let newMessageElement = React.createRef();
 
     let contact = state.contacts.map(contact => <Contact
-        name={contact.name} id={contact.id}/>);
+        name={contact.name} id={contact.id} key ={contact.id}/>);
 
     let message = state.messages.map(message => <Message
-        text={message.text}
+        text={message.text} key ={message.id}
     />);
 
     let newMessageBody = state.newMessageBody;
 
 
-    let onSendMessage = () =>{
+    const onSendMessage = () =>{
 
         props.sendMessage();
     };
@@ -29,10 +32,12 @@ const Dialogs = (props) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
     }
+    //window.state = state;
+
 
     return (
 
-        <div className={style.dialogs}>
+        <div className={style.dialogs} >
 
 
             <div className={style.contacts}>
@@ -55,5 +60,6 @@ const Dialogs = (props) => {
 
     );
 }
+
 
 export default Dialogs;

@@ -22,17 +22,23 @@ let initialState = {
 const contactsReducer = (state = initialState, action)=> { //параметрыпо умолчанию
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_BODY :{
-            let stateCopy = {...state};
-            stateCopy.newMessageBody = action.body;
-            return stateCopy;
+
+            return {
+                ...state,
+                newMessageBody : action.body,
+            };
         }
         case SEND_MESSAGE :{
-            let stateCopy = {...state};
-            let body = stateCopy.newMessageBody;
-            stateCopy.newMessageBody = "";
-            stateCopy.massages = [...state.messages]
-            stateCopy.messages.push({id: stateCopy.messages.length, text: body});
-            return stateCopy.messages;
+
+            let body = state.newMessageBody;
+            let newMessageText = state.messages.push({id: state.messages.length, text: body});
+
+            return {
+                ...state,
+                newMessageBody : "",
+                massages : [/*...state.messages,*/ newMessageText],
+
+            };
         }
         default:
             return state;

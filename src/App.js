@@ -1,11 +1,11 @@
 import React from 'react';
-
 import './App.css';
 import Header from "./Components/Header/Header.jsx";
 import ProfileMainData from './Components/MainData/ProfileMainData';
 import Navigation from './Components/Navigation/Navigation';
-import { Routes, Route} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 
 const App = (props) => {
@@ -20,8 +20,6 @@ const App = (props) => {
                     <Routes>
                         <Route path="/profile/*" element={<ProfileMainData
                                 store={props.store}
-                            /*profilePage={props.state.profilePage}
-                            dispatch = {props.dispatch }*/
 
                         />
                         }/>
@@ -29,10 +27,8 @@ const App = (props) => {
                         <Route path="/dialogs/*" element={<DialogsContainer
                             store = {props.store}
 
-                            /*contactsPage = {props.state.contactsPage}
-                            dispatch = {props.dispatch }*/
                         />}/>
-
+                        <Route path="/users/*" element={<UsersContainer /> }/>
                         <Route path="/news/*" element={""}/>
 
                         <Route path="/photos/*" element={""}/>
