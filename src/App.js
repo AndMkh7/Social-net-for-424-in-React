@@ -29,6 +29,7 @@ const App = (props) => {
 
                         />}/>
                         <Route path="/users/*" element={<UsersContainer /> }/>
+
                         <Route path="/news/*" element={""}/>
 
                         <Route path="/photos/*" element={""}/>
