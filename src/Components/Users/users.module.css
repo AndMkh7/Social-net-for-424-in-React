@@ -1,4 +1,9 @@
 .userPhoto{
     width:100px;
-    height: 150px;
+    height: 100px;
+}
+.selectedPage{
+    font-weight: bold;
+    font-size: 20px;
+    color :orangered;
 }
