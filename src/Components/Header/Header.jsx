@@ -9,14 +9,8 @@ const Header = () => {
                 <img id="img" src="https://pespro.net/wp-content/uploads/2020/05/424esports7-300x300.png"
                      alt="424image"/>
             </a>
-
             Hello 424
-
-
         </div>
-
-
-
 
     );
 }

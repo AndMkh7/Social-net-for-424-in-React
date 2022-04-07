@@ -32,7 +32,7 @@ const Dialogs = (props) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
     }
-    //window.state = state;
+
 
 
     return (

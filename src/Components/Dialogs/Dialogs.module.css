@@ -1,19 +1,13 @@
 .dialogs{
     min-height: 465px;
     display:grid ;
-
-
     grid-template-columns: 2fr 10fr;
-
-    /*grid-template-rows: 60px 1fr;*/
     grid-template-areas:
     'contact message'
     'contact textarea';
 
-
     text-decoration: none;
-   /* background-image: url("./namak.png");
-    background-size : 100%;*/
+
 }
 .contacts{
     display: grid;
@@ -34,9 +28,6 @@
     color:orangered;
     font-weight: bold;
     font-size: 20px;
-    /*
-    text-decoration: none;
-    */
 
 }
 
