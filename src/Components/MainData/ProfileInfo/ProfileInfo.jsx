@@ -14,14 +14,14 @@ const ProfileInfo = (props) => {
             <div>
                 <img
                     src="https://images.pexels.com/photos/159438/android-tv-game-controller-game-controller-video-game-controller-android-game-controller-159438.jpeg"
-                    width="700px" alt="mainmg"/>
+                    width="700px" alt="mainImg"/>
 
             </div>
             <div className={style.avatarInfo}>
                 <img src={props.profile.photos.large} alt=""/>
             </div>
 
-            <div> Name -  {props.profile.fullName}</div>
+            <div> Username -  {props.profile.fullName} </div>
         </div>
     );
 }

@@ -1,17 +1,25 @@
 .header {
     display: grid;
     grid-area: header;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(0deg, rgba(5, 31, 31, 1) 15%, rgba(0, 0, 0, 1) 82%, rgba(34, 193, 195, 1) 95%);
-
-    color: yellow;
-
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(231,210,18,1) 48%, rgba(228,255,0,1) 65%);
+    color: black;
+    width:100%;
+    position: relative;
 }
 
 .header img {
-    width: 30px;
+    width: 50px;
     margin-top: 5px;
     margin-left: 5px;
-
 }
 
+.loginBlock{
+    position: relative;
+    float: right;
+}
+
+
+.loginBlock a {
+    color: black;
+}
