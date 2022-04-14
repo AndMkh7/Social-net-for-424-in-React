@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./users.module.css";
 import userPhoto from "../../assets/images/user.png";
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
+import {followUsers, unfollowUsers} from "../../api/api";
+
 
 let Users = (props) => {
 
@@ -41,14 +42,37 @@ let Users = (props) => {
                                  {u.followed ?
                                      <button onClick={() => {
 
-                                         axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
-                                             {withCredentials:true,
-                                                 headers:{
-                                                 "API-KEY":"38832667-db79-44a6-b052-53b77ab2920e"
-                                                 }
-                                             })
+                                         /*axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                             withCredentials: true,
+                                             headers: {
+                                                 "API-KEY": "fd091aef-017c-4966-af87-01ba8f701da9"
+                                             }
+                                         })
                                              .then(response => {
-                                               if(response.data.resultCode === 0){
+                                                 if (response.data.resultCode === 0) {
+                                                     props.unfollow(u.id);
+                                                 }
+                                             });
+                                     }}>UnFollow</button> :
+
+
+                                     <button onClick={() => {
+                                         axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                             withCredentials: true,
+                                             headers: {
+                                                 "API-KEY": "fd091aef-017c-4966-af87-01ba8f701da9"
+                                             }
+                                         })
+                                             .then(response => {
+                                                 if (response.data.resultCode === 0) {
+                                                     props.follow(u.id);
+                                                 }
+                                             });*/
+
+
+                                         unfollowUsers(u.id)
+                                             .then(data => {
+                                               if(data.resultCode === 0){
                                                    props.unfollow(u.id);
                                                }
                                              });
@@ -56,14 +80,9 @@ let Users = (props) => {
 
 
                                      <button onClick={() => {
-                                         axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,{},
-                                             {withCredentials:true,
-                                                 headers:{
-                                                     "API-KEY":"38832667-db79-44a6-b052-53b77ab2920e"
-                                                 }
-                                             })
-                                             .then(response => {
-                                                 if(response.data.resultCode === 0){
+                                         followUsers(u.id)
+                                             .then(data => {
+                                                 if(data.resultCode === 0){
                                                      props.follow(u.id);
                                                  }
                                              });
