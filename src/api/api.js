@@ -22,7 +22,14 @@ export const getHeader = () =>{
         });
 }
 
-export const followUsers =(id=1) =>{
+export const getProfile = (userId/*= 23100*/) =>{
+    return instance.get(`profile/${userId}`)
+        .then(response => {
+            return response.data;
+        });
+}
+
+export const followUsers =(id) =>{
     return instance.post(`follow/${id}`,{})
         .then(response => {
             return response.data;
