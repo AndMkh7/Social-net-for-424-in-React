@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./users.module.css";
 import userPhoto from "../../assets/images/user.png";
 import {NavLink} from "react-router-dom";
-import {followUsers, unfollowUsers} from "../../api/api";
+import { usersAPI } from "../../api/api";
 
 
 let Users = (props) => {
@@ -45,7 +45,7 @@ let Users = (props) => {
 
                                          props.toggleFollowingProgress(true, u.id);
 
-                                         unfollowUsers(u.id)
+                                                 usersAPI.unfollow(u.id)
                                              .then(data => {
                                                if(data.resultCode === 0){
                                                    props.unfollow(u.id);
@@ -60,7 +60,7 @@ let Users = (props) => {
 
                                          props.toggleFollowingProgress(true , u.id);
 
-                                         followUsers(u.id)
+                                                 usersAPI.follow(u.id)
                                              .then(data => {
                                                  if(data.resultCode === 0){
                                                      props.follow(u.id);

@@ -8,10 +8,9 @@ import {
     setTotalUsersCount,
     toggleIsFetching, toggleFollowingProgress
 } from "../../redux/users-reducer";
-import * as axios from "axios";
 import Users from "./Users";
 import Preloader from "../common/Preloader/preloader";
-import {getUsers} from "../../api/api";
+import { usersAPI } from "../../api/api";
 
 class UsersAPIComponent extends React.Component {
 
@@ -25,7 +24,7 @@ class UsersAPIComponent extends React.Component {
                 this.props.setTotalUsersCount(response.data.totalCount);
             });
 */
-        getUsers(this.props.currentPage,this.props.pageSize)
+        usersAPI.getUsers(this.props.currentPage,this.props.pageSize)
             .then(data => {
                 this.props.toggleIsFetching(false);
                 this.props.setUsers(data.items);
@@ -46,7 +45,7 @@ class UsersAPIComponent extends React.Component {
                 this.props.setUsers(response.data.items);
             });*/
 
-        getUsers(pageNumber,this.props.pageSize)
+        usersAPI.getUsers(pageNumber,this.props.pageSize)
             .then(data => {
                 this.props.toggleIsFetching(false);
                 this.props.setUsers(data.items);

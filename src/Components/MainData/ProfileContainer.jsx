@@ -1,7 +1,6 @@
 import React from "react";
 import "./Profile.module.css";
 import Profile from "./Profile";
-import * as axios from "axios";
 import {connect} from "react-redux";
 import {setUserProfile} from "../../redux/profile-reducer";
 import {
@@ -9,7 +8,7 @@ import {
     useNavigate,
     useParams,
 } from "react-router-dom";
-import {getProfile} from "../../api/api";
+import { usersAPI } from "../../api/api";
 
 /*Эту функцию я скинул сюда , чтобы не откатить версию react-router-dom. Потому что
 в данный момент withRouter не используется и без этого не обойтись*/
@@ -44,7 +43,7 @@ class ProfileContainer extends React.Component {
                 this.props.setUserProfile(response.data);
             });
 */
-        getProfile(userId)
+        usersAPI.getProfile(userId)
             .then(data => {
                 this.props.setUserProfile(data);
             });

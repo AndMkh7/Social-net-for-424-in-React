@@ -1,10 +1,10 @@
 .contact{
     text-decoration: none;
-    grid-area: "contact";
+   /* grid-area: "contact"*/;
 }
 
 .active{
     text-decoration: none;
     font-weight: bold;
-    color : Salmon;
+    color : olivedrab;
 }
