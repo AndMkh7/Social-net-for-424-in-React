@@ -14,6 +14,7 @@ import {connect} from "react-redux";
 let mapStateToProps =(state)=>{
     return{
         contactsPage: state.contactsPage,
+        isAuth: state.auth.isAuth
     }
 };
 

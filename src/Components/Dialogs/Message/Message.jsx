@@ -7,7 +7,6 @@ const Message = (props) => {
 
         <div className={style.message} >
             {props.text}
-
         </div>
 
     )
