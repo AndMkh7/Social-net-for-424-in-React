@@ -2,13 +2,12 @@ import React from "react";
 import "./Profile.module.css";
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {setUserProfile} from "../../redux/profile-reducer";
+import {getUserProfile} from "../../redux/profile-reducer";
 import {
     useLocation,
     useNavigate,
     useParams,
 } from "react-router-dom";
-import { usersAPI } from "../../api/api";
 
 /*Эту функцию я скинул сюда , чтобы не откатить версию react-router-dom. Потому что
 в данный момент withRouter не используется и без этого не обойтись*/
@@ -36,17 +35,12 @@ class ProfileContainer extends React.Component {
 
         let userId = this.props.router.params.userId
         if (!userId) {
-            /*userId =  23100*/
+            userId =  2;
         }
-      /*  axios.get(`https://social-network.samuraijs.com/api/1.0/profile/` + userId)
-            .then(response => {
-                this.props.setUserProfile(response.data);
-            });
-*/
-        usersAPI.getProfile(userId)
-            .then(data => {
-                this.props.setUserProfile(data);
-            });
+
+        this.props.getUserProfile(userId);
+
+
     }
 
 render ()
@@ -65,4 +59,4 @@ render ()
 
 
 
-export default connect(mapStateToProps, {setUserProfile})(withRouter(ProfileContainer));
+export default connect(mapStateToProps, {getUserProfile})(withRouter(ProfileContainer));

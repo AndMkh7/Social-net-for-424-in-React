@@ -5,7 +5,7 @@ import style from "./Post.module.css";
 
 const Post = (props) => {
     return (
-        <div className={style.item}>
+        <div className={style.item} key ={1}>
             <img src="https://img.a.transfermarkt.technology/portrait/big/3372-1588239928.jpg?lm=1" alt=""/>
             {props.postText}
             <div >

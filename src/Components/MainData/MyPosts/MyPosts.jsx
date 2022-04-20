@@ -31,8 +31,8 @@ const MyPosts = (props) => {
 
 
     return (
-        <div>
-            <div className={style.mypost}>
+        <div >
+            <div className={style.myPost}>
                 My Posts
             </div>
 

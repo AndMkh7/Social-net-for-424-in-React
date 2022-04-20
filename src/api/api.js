@@ -14,37 +14,33 @@ export const usersAPI = {
             });
     },
 
-    getHeader  () {
-        return instance.get(`auth/me`)
-            .then(response => {
-                return response.data;
-            });
-    },
+
 
     getProfile  (userId/*= 23100*/) {
         return instance.get(`profile/${userId}`)
+
+    },
+
+    follow (userId){
+        return instance.post(`follow/${userId}`/*,{}*/)
             .then(response => {
                 return response.data;
             });
     },
 
-    follow (id){
-        return instance.post(`follow/${id}`,{})
-            .then(response => {
-                return response.data;
-            });
-    },
-
-    unfollow (id=1) {
-        return instance.delete(`follow/${id}`)
+    unfollow (userId) {
+        return instance.delete(`follow/${userId}`)
             .then(response => {
                 return response.data;
             });
     }
+};
 
-
+export const authAPI ={
+    me(){
+        return instance.get(`auth/me`)
+              }
 }
-
 
 
 
