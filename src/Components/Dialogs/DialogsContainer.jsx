@@ -2,6 +2,9 @@ import React from "react";
 import {sendMessageCreator ,updateNewMessageBodyCreator } from "../../redux/contacts-reducer";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
+import {withAuthRedirect} from "../../HOC/withAuthRedirect";
+import {compose} from "redux";
+
 
 /*Инсталлируем библиотеку react-redux в наш проект.
   С помощю супер-функции connect(1)(2) , который существует в библиотеке react-redux ,
@@ -14,7 +17,7 @@ import {connect} from "react-redux";
 let mapStateToProps =(state)=>{
     return{
         contactsPage: state.contactsPage,
-        isAuth: state.auth.isAuth
+
     }
 };
 
@@ -29,6 +32,7 @@ let mapDispatchToProps = (dispatch)=>{
     }
 };
 
-const DialogsContainer = connect(mapStateToProps ,mapDispatchToProps )(Dialogs)
 
-export default DialogsContainer;
+export default compose (connect(mapStateToProps ,mapDispatchToProps ),
+                        withAuthRedirect,
+                        )(Dialogs);

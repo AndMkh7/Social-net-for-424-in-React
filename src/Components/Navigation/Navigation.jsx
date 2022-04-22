@@ -7,7 +7,7 @@ const Navigation = () => {
 
         <div className={style.navbar}>
             <div className={style.item}>
-                <NavLink to="/profile"
+                <NavLink to="/profile/:userId/"
                          className={navData => navData.isActive ? style.active : style.item}>Profile</NavLink>
             </div>
 

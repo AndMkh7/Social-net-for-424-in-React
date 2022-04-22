@@ -4,13 +4,14 @@ import Profile from "./Profile";
 import {connect} from "react-redux";
 import {getUserProfile} from "../../redux/profile-reducer";
 import {
-    Navigate,
     useLocation,
     useNavigate,
     useParams,
 } from "react-router-dom";
+import {withAuthRedirect} from "../../HOC/withAuthRedirect";
+import {compose} from "redux";
 
-/*Эту функцию я скинул сюда , чтобы не откатить версию react-router-dom. Потому что
+/*Эту функцию withRouter я скинул сюда , чтобы не откатить версию react-router-dom. Потому что
 в данный момент withRouter не используется и без этого не обойтись*/
 
 
@@ -40,12 +41,10 @@ class ProfileContainer extends React.Component {
         }
 
         this.props.getUserProfile(userId);
-
-
     }
 
     render() {
-        if(!this.props.isAuth) return <Navigate to="/login"/>
+
 
         return (
             <Profile {...this.props} profile={this.props.profile}/>
@@ -53,10 +52,16 @@ class ProfileContainer extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => ({
+let AuthRedirectComponent = withAuthRedirect(ProfileContainer);
+
+let mapStateToProps = (state) => ({
     profile: state.profilePage.profile,
-    isAuth: state.auth.isAuth,
 });
 
+export default compose(
+    connect(mapStateToProps, {getUserProfile}),
+    withRouter,
+    withAuthRedirect
+    )(ProfileContainer);
 
-export default connect(mapStateToProps, {getUserProfile})(withRouter(ProfileContainer));
+
