@@ -2,6 +2,7 @@ import React from "react";
 import "./ProfileInfo.module.css"
 import style from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/preloader";
+import ProfileStatus from "./ProfileStatus";
 
 
 const ProfileInfo = (props) => {
@@ -12,13 +13,14 @@ const ProfileInfo = (props) => {
     return (
         <div >
             <div>
-                <img
+                {/*<img
                     src="https://images.pexels.com/photos/159438/android-tv-game-controller-game-controller-video-game-controller-android-game-controller-159438.jpeg"
-                    width="700px" alt="mainImg"/>
+                    width="700px" alt="mainImg"/>*/}
 
             </div>
             <div className={style.avatarInfo}>
                 <img src={props.profile.photos.large} alt=""/>
+                <ProfileStatus status={"Hello Ando"}/>
             </div>
 
             <div> Username -  {props.profile.fullName} </div>
