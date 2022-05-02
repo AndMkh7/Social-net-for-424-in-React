@@ -16,10 +16,7 @@ export const usersAPI = {
 
 
 
-    getProfile  (userId/*= 23100*/) {
-        return instance.get(`profile/${userId}`)
 
-    },
 
     follow (userId){
         return instance.post(`follow/${userId}`/*,{}*/)
@@ -35,6 +32,22 @@ export const usersAPI = {
             });
     }
 };
+
+export const profileAPi ={
+    getProfile  (userId) {
+        return instance.get(`profile/${userId}`);
+
+    },
+    getStatus (userId) {
+        return instance.get(`profile/status/${userId}`);
+
+    },
+    updateStatus (status) {
+        return instance.put(`profile/status`,{status:status});
+
+    },
+
+}
 
 export const authAPI ={
     me(){

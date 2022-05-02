@@ -20,7 +20,7 @@ const ProfileInfo = (props) => {
             </div>
             <div className={style.avatarInfo}>
                 <img src={props.profile.photos.large} alt=""/>
-                <ProfileStatus status={"Hello Ando"}/>
+                <ProfileStatus status={props.status} updateStatus = {props.updateStatus}/>
             </div>
 
             <div> Username -  {props.profile.fullName} </div>
