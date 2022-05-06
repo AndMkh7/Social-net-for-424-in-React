@@ -9,6 +9,7 @@ import HeaderContainer from "./Components/Header/HeaderContainer";
 import Login from "./Components/Login/Login";
 
 
+
 const App = (props) => {
 
     return (
@@ -21,7 +22,7 @@ const App = (props) => {
                     <Routes>
 
                         <Route path="/profile/:userId/" element={<ProfileContainer
-                                store={props.store}
+                            store={props.store}
                         />
                         }/>
 
@@ -31,17 +32,15 @@ const App = (props) => {
 
                         />}/>
 
-
                         <Route path="/users/*" element={<UsersContainer /> }/>
 
                         <Route path="/login/" element={<Login store={props.store} /> } />
 
 
-                        <Route path="/news/!*" element={""}/>
+                        <Route path="/news/*" element={""}/>
 
-                        <Route path="/photos/!*" element={""}/>
+                        <Route path="/photos/*" element={""}/>
 
-                        <Route path="/settings/!*" element={""}/>
                     </Routes>
 
                 </div>
