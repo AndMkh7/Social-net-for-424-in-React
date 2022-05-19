@@ -3,15 +3,11 @@ import style from "./Dialogs.module.css"
 import Contact from "./Contact/Contact";
 import Message from "./Message/Message";
 import {Navigate} from "react-router-dom";
-
+import {AddMessageFormRedux} from "./AddMessageForm/AddMessageForm";
 
 const Dialogs = (props) => {
 
-
     const state = props?.contactsPage;
-
-
-    let newMessageElement = React.createRef();
 
     let contact = state.contacts.map(contact => <Contact
         name={contact.name} id={contact.id} key ={contact.id}/>);
@@ -20,26 +16,14 @@ const Dialogs = (props) => {
         text={message.text} key ={message.id}
     />);
 
-    let newMessageBody = state.newMessageBody;
-
-
-    const onSendMessage = () =>{
-
-        props.sendMessage();
-    };
-
-
-    let onMessageChange =(e)=>{
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
+    let addNewMessage =(values)=>{
+       props.sendMessage(values.newMessageBody);
     }
 
     if(!props.isAuth) return <Navigate to={ "/login"}/>;
 
     return (
-
         <div className={style.dialogs} >
-
 
             <div className={style.contacts}>
                 {contact}
@@ -47,20 +31,12 @@ const Dialogs = (props) => {
 
             <div className={style.messages}>
                 <div> {message} </div>
-                <div>
-
-                    <textarea  ref ={newMessageElement}
-                               onChange = {onMessageChange} value = {newMessageBody}/>
-
-                    <button className={style.send} onClick = {onSendMessage} > Send </button>
-
-                </div>
+                <AddMessageFormRedux onSubmit={addNewMessage}/>
             </div>
-
         </div>
-
     );
 }
+
 
 
 export default Dialogs;

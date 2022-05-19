@@ -1,6 +1,6 @@
 import profileReducer from "./profile-reducer";
 import sidebarReducer from "./sidebar-reducer";
-import contactsReducer from "./contacts-reducer";
+import dialogsReducer from "./dialogs-reducer";
 
 /*этот store не будет использоваться, но пока что не удаляем,
 * наши данные store-а находятся в файле redux-store.js*/
@@ -48,7 +48,7 @@ let store = {
     dispatch(action) {
 
         this._state.profilePage = profileReducer(this._state.profilePage,action);
-        this._state.contactsPage = contactsReducer(this._state.contactsPage,action);
+        this._state.contactsPage = dialogsReducer(this._state.contactsPage,action);
         this._state.sidebarPage = sidebarReducer(this._state.sidebar,action);
 
         this._callSubscriber(this._state);
