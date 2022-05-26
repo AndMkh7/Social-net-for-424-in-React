@@ -12,15 +12,12 @@ const Header = (props) => {
                          alt="424image"/>
                 </a>
                 <div className={style.loginBlock}>
-                    {props.isAuth ? props.login :<NavLink to={`/login`}>LogIn</NavLink> }
-
+                    {props.isAuth
+                        ?<div>{props.login} - <button onClick={props.logout}>Logout</button> </div>
+                        : <NavLink to={`/login`}>LogIn</NavLink> }
                 </div>
-
             </div >
-
-
         </header>
-
     );
 }
 
