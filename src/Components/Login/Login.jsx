@@ -1,10 +1,10 @@
-import style from './Login.module.css'
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../common/FormsControls/FormsControls";
 import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Navigate} from "react-router-dom";
+import style from "../common/FormsControls/FormsControls.module.css"
 
 
 const LoginForm = (props) => {
@@ -19,9 +19,12 @@ const LoginForm = (props) => {
                        validate={[required]} type={"password"}/>
             </div>
             <div>
-                <Field type={"checkbox"} name={"rememberMe"} component={Input}
-                       validate={[required]}/> Remember me
+                <Field type={"checkbox"} name={"rememberMe"} component={Input} />
+                RememberMe
             </div>
+            {props.error && <div className={style.formSummaryError}>
+                {props.error}
+            </div>}
             <div>
                 <button>Login</button>
             </div>
