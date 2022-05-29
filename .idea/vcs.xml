@@ -3,5 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/marchApp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/marchApp-master/marchApp-master" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/react-way-of-samurai" vcs="Git" />
   </component>
 </project>

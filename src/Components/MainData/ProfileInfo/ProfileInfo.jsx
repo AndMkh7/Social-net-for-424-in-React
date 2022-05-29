@@ -18,14 +18,17 @@ const ProfileInfo = (props) => {
                     width="700px" alt="mainImg"/>*/}
 
             </div>
+            <div> Username -  {props.profile.fullName} </div>
+
             <div className={style.avatarInfo}>
                 <img src={props.profile.photos.large} alt=""/>
                 <ProfileStatus status={props.status} updateStatus = {props.updateStatus}/>
             </div>
 
-            <div> Username -  {props.profile.fullName} </div>
+
         </div>
     );
 }
 
 export default ProfileInfo;
+

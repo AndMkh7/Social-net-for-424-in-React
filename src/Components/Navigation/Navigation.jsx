@@ -7,8 +7,8 @@ const Navigation = () => {
 
         <div className={style.navbar}>
             <div className={style.item}>
-                <NavLink to="/profile/23100"
-                         className={navData => navData.isActive ? style.active : style.item}>Profile</NavLink>
+                <NavLink to="/profile"
+                         className = { navData => navData.isActive ? style.active : style.item }>Profile</NavLink>
             </div>
 
             <div className={style.item}>

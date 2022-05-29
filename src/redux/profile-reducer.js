@@ -1,4 +1,4 @@
-import {profileAPi as profileAPI, usersAPI} from "../api/api";
+import {profileAPI } from "../api/api";
 
 const ADD_POST = "ADD-POST";
 const SET_USER_PROFILE = "SET_USER_PROFILE";
@@ -13,7 +13,7 @@ let initialState = {
     status : "",
 };
 
-const profileReducer = (state=initialState, action)=> {//параметрыпо умолчанию
+const profileReducer = (state=initialState, action)=> {//параметры по умолчанию
     switch (action.type) {
         case ADD_POST:
             let newPost = {
@@ -77,9 +77,6 @@ export const updateStatus = (status) => (dispatch)=>{
             }
         });
 };
-
-
-
 
 
 export default profileReducer;

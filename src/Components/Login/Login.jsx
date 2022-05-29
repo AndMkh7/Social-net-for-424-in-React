@@ -40,7 +40,7 @@ const Login = (props) => {
         props.login(formData.email , formData.password , formData.rememberMe)
     }
     if(props.isAuth){
-        return <Navigate to={"/profile/23100"} />
+        return <Navigate to={"/profile"} />
     }
     return (<div>
             <h1>Login</h1>

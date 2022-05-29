@@ -38,13 +38,16 @@ let Users = (props) => {
                                 </NavLink>
                             </div>
                              <div>
+                                 {u.followed
+                                     ? <button disabled={props.followingInProgress
+                                         .some(id => id === u.id)} onClick={() => {
+                                         props.unfollow(u.id)
+                                     }}>Unfollow</button>
+                                     : <button disabled={props.followingInProgress
+                                         .some(id => id === u.id)} onClick={() => {
+                                         props.follow(u.id)
+                                     }}>Follow</button>}
 
-                                 {u.followed ?
-                                     <button disabled={props.followingInProgress.some(id => id === u.id)}
-                                             onClick={() => {props.unfollow(u.id)}}>UnFollow</button> :
-
-                                     <button disabled={props.followingInProgress.some(id => id === u.id)}
-                                             onClick={() => {props.follow(u.id)}}>Follow</button>}
 
                              </div>
                          </span>
@@ -65,3 +68,4 @@ let Users = (props) => {
 }
 
 export default Users;
+
